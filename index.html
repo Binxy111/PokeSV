@@ -61,16 +61,21 @@ const loadGameButton = document.getElementById('loadGameButton');
 
 // Tile sheet (replace with your actual tilesheet)
 const tileSheet = new Image();
-tileSheet.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1173a21e-1b09-429e-ad99-8901f0ac8d08/dab2byf-afb89e9f-cfda-44e2-8caa-4566fc598e92.png/v1/fill/w_256,h_20832/pokemon_tileset_from_public_tiles_32x32_by_chaoticcherrycake_dab2byf-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjA4MzIiLCJwYXRoIjoiXC9mXC8xMTczYTIxZS0xYjA5LTQyOWUtYWQ5OS04OTAxZjBhYzhkMDhcL2RhYjJieWYtYWZiODllOWYtY2ZkYS00NGUyLThjYWEtNDU2NmZjNTk4ZTkyLnBuZyIsIndpZHRoIjoiPD0yNTYifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.4S7_Z_h_LTzlXpOrtva_lJcnv6cObv9GHrvd7Bj-bS8'; // Path to your tilesheet
+tileSheet.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1173a21e-1b09-429e-ad99-8901f0ac8d08/d8g97rp-e0b30665-2f29-481d-b57c-70f58cae2ce6.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzExNzNhMjFlLTFiMDktNDI5ZS1hZDk5LTg5MDFmMGFjOGQwOFwvZDhnOTdycC1lMGIzMDY2NS0yZjI5LTQ4MWQtYjU3Yy03MGY1OGNhZTJjZTYucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.o5qvf64tlZVNkCZr6wzKgf1jZoakG6zH-1iI--sXz0g'; // Path to your tilesheet
 const TILE_SIZE = 32;
 
 // Map data (example, replace with your map)
 const map = [
-  [1, 1, 400, 1, 1],
-  [1, 0, 0, 0, 1],
-  [1, 0, 1, 0, 1],
-  [1, 0, 0, 0, 1],
-  [1, 1, 1, 1, 1],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
+  [108, 108, 108, 108, 108, 108, 108, 108, 108, 108],
 ];
 
 // Player position

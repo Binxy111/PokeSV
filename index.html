@@ -96,7 +96,7 @@ function drawMap() {
     for (let x = 0; x < map[y].length; x++) {
       const tileId = map[y][x];
       // Draw tile from tilesheet (example - adapt to your tilesheet structure)
-      ctx.drawImage(tileSheet, tileId * TILE_SIZE, 0, TILE_SIZE, TILE_SIZE, x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+      ctx.drawImage(tileSheet, tileId * TILE_SIZE, 96, TILE_SIZE, TILE_SIZE, x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
     }
   }
 }

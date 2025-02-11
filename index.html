@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Pokemon Open World</title>
-<script>
+
+<script type="text/javascript">
 var ctx = null;
 var gameMap = [
 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -29,7 +29,7 @@ var tileset = null, tilesetURL = "https://images-wixmp-ed30a86b8c4ca887773594c2.
 var floorTypes = {
 	solid	: 0,
 	path	: 1,
-	water : 2
+	water	: 2
 };
 var tileTypes = {
 	0 : { colour:"#685b48", floor:floorTypes.solid, sprite:[{x:0,y:0,w:32,h:32}]	},
@@ -42,7 +42,6 @@ var tileTypes = {
 	7 : { colour:"#e8bd7a", floor:floorTypes.path,	sprite:[{x:224,y:0,w:32,h:32}]	},
 	8 : { colour:"#286625", floor:floorTypes.solid,	sprite:[{x:256,y:0,w:32,h:32}]	},
 	9 : { colour:"#678fd9", floor:floorTypes.water,	sprite:[{x:288,y:0,w:32,h:32}]	}
-};
 
 var directions = {
 	up		: 0,
@@ -241,6 +240,8 @@ function drawGame()
 	requestAnimationFrame(drawGame);
 }
 </script>
+
+</head>
 <body>
 
 <canvas id="game" width="400" height="400"></canvas>

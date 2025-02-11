@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Pokemon Open World</title>
+<style>
+body {
+  margin: 0;
+  overflow: hidden; /* Prevent scrollbars */
+}
+#gameCanvas {
+  display: block; /* Prevent canvas from having a small margin */
+}
+#titleScreen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('title_background.jpg'); /* Replace with your image */
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#titleScreen button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+}
+#gameContainer {
+  display: none; /* Initially hidden */
+}
+</style>
+</head>
+<body>
+
+<div id="titleScreen">
+  <h1>Pokemon Open World</h1>
+  <button id="newGameButton">New Game</button>
+  <button id="loadGameButton">Load Game</button>
+</div>
+
+<div id="gameContainer">
+  <canvas id="gameCanvas" width="800" height="600"></canvas>
+  <div id="menu">
+    <button id="inventoryButton">Inventory</button>
+    <button id="saveButton">Save</button>
+    <button id="mapButton">Map</button>
+    <button id="pokedexButton">Pokedex</button>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+const titleScreen = document.getElementById('titleScreen');
+const gameContainer = document.getElementById('gameContainer');
+const newGameButton = document.getElementById('newGameButton');
+const loadGameButton = document.getElementById('loadGameButton');
+
+// Tile sheet (replace with your actual tilesheet)
+const tileSheet = new Image();
+tileSheet.src = 'tilesheet.png'; // Path to your tilesheet
+const TILE_SIZE = 32;
+
+// Map data (example, replace with your map)
+const map = [
+  [1, 1, 1, 1, 1],
+  [1, 0, 0, 0, 1],
+  [1, 0, 1, 0, 1],
+  [1, 0, 0, 0, 1],
+  [1, 1, 1, 1, 1],
+];
+
+// Player position
+let playerX = 1;
+let playerY = 1;
+
+// Pokemon data (example)
+const pokemonList = [
+  { name: "Pikachu", x: 3, y: 2 },
+  { name: "Bulbasaur", x: 1, y: 3 }
+];
+
+// Game state (you'll need to expand this)
+let inventory = [];
+let pokedex = [];
+
+
+function drawMap() {
+  for (let y = 0; y < map.length; y++) {
+    for (let x = 0; x < map[y].length; x++) {
+      const tileId = map[y][x];
+      // Draw tile from tilesheet (example - adapt to your tilesheet structure)
+      ctx.drawImage(tileSheet, tileId * TILE_SIZE, 0, TILE_SIZE, TILE_SIZE, x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+    }
+  }
+}
+
+function drawPokemon() {
+  for (const pokemon of pokemonList) {
+    // Basic representation - replace with actual sprites
+    ctx.fillStyle = 'red';
+    ctx.fillRect(pokemon.x * TILE_SIZE, pokemon.y * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+  }
+}
+
+function drawPlayer() {
+    ctx.fillStyle = 'blue';  // Example player representation
+    ctx.fillRect(playerX * TILE_SIZE, playerY * TILE_SIZE, TILE_SIZE, TILE_SIZE);
+}
+
+
+function gameLoop() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas
+  drawMap();
+  drawPokemon();
+  drawPlayer();
+  requestAnimationFrame(gameLoop);
+}
+
+
+newGameButton.addEventListener('click', () => {
+  titleScreen.style.display = 'none';
+  gameContainer.style.display = 'block';
+  gameLoop();
+});
+
+loadGameButton.addEventListener('click', () => {
+  // Implement loading logic (e.g., from local storage)
+  titleScreen.style.display = 'none';
+  gameContainer.style.display = 'block';
+  gameLoop();
+});
+
+
+
+// Example movement
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'ArrowRight' && playerX < map[0].length -1) {
+        playerX++;
+    } else if (event.key === 'ArrowLeft' && playerX > 0) {
+        playerX--;
+    } else if (event.key === 'ArrowDown' && playerY < map.length - 1) {
+        playerY++;
+    } else if (event.key === 'ArrowUp' && playerY > 0) {
+        playerY--;
+    }
+});
+
+</script>
+
+</body>
+</html>

@@ -48,11 +48,11 @@ var gameMap = [
 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 	1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 ];
-var tileW = 32, tileH = 32;
+var tileW = 16, tileH = 16;
 var mapW = 60, mapH = 32;
 var currentSecond = 0, frameCount = 0, framesLastSecond = 0, lastFrameTime = 0;
 
-var tileset = null, tilesetURL = "https://www.spriters-resource.com/resources/sheets/189/191831.png?updated=1676427719", tilesetLoaded = false;
+var tileset = null, tilesetURL = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/862b1eec-47a9-44b9-9915-69d8b925ab1d/d76ewjp-43d24898-e68d-41e7-a9db-cb24016a299d.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwic3ViIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsImF1ZCI6WyJ1cm46c2VydmljZTpmaWxlLmRvd25sb2FkIl0sIm9iaiI6W1t7InBhdGgiOiIvZi84NjJiMWVlYy00N2E5LTQ0YjktOTkxNS02OWQ4YjkyNWFiMWQvZDc2ZXdqcC00M2QyNDg5OC1lNjhkLTQxZTctYTlkYi1jYjI0MDE2YTI5OWQucG5nIn1dXX0.QmnZB8YEt99ejCuhQ586yBZM8dGtwBk_WGJz4QUIUIE", tilesetLoaded = false;
 
 var floorTypes = {
 	solid	: 0,
@@ -62,7 +62,7 @@ var floorTypes = {
 var tileTypes = {
 	2 : { colour:"#685b48", floor:floorTypes.path, sprite:[{x:448,y:256,w:32,h:32}]	},
 	0 : { colour:"#5aa457", floor:floorTypes.path,	sprite:[{x:448,y:352,w:32,h:32}]	},
-	1 : { colour:"#e8bd7a", floor:floorTypes.path,	sprite:[{x:224,y:0,w:32,h:32}]	},
+	1 : { colour:"#e8bd7a", floor:floorTypes.path,	sprite:[{x:768,y:528,w:32,h:32}]	},
 	3 : { colour:"#286625", floor:floorTypes.solid,	sprite:[{x:96,y:0,w:32,h:32}]	},
 	4 : { colour:"#678fd9", floor:floorTypes.path,	sprite:[{x:0,y:0,w:32,h:32}]	}
 };

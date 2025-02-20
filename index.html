@@ -112,9 +112,9 @@ function Character()
 	this.tileFrom	= [1,1];
 	this.tileTo		= [1,1];
 	this.timeMoved	= 0;
-	this.dimensions	= [30,30];
+	this.dimensions	= [16,16];
 	this.position	= [45,45];
-	this.delayMove	= 700;
+	this.delayMove	= 400;
 
 	this.direction	= directions.up;
 	this.sprites = {};
@@ -258,7 +258,10 @@ function drawGame()
 
 	ctx.fillStyle = "#ff0000";
 	ctx.fillText("FPS: " + framesLastSecond, 10, 20);
-
+	
+       ctx.fillStyle = "#ff0000";
+	ctx.fillText("$: " + beli, 10, 20);
+	
 	lastFrameTime = currentFrameTime;
 	requestAnimationFrame(drawGame);
 }
@@ -267,7 +270,7 @@ function drawGame()
 </head>
 <body>
 
-<canvas id="game" width="400" height="400"></canvas>
+<canvas id="game" width="100%" height="100%"></canvas>
 
 </body>
 </html>
